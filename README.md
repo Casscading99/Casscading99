@@ -19,7 +19,7 @@ It started off as a basic structure and was elevated with modern design elements
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack    
 
 - **HTML5**  
 - **Tailwind CSS** (styling)  

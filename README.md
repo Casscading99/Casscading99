@@ -1,11 +1,11 @@
-# 🎓 My School Project Website
 
-This is a simple school project website built with HTML, Tailwind CSS, Alpine.js, and React.  
-It started as a basic structure and was elevated with modern design elements from the Pixelrocket template, giving it a polished, professional look.
+
+This simple website was built with HTML, Tailwind CSS, Alpine.js, and React.  
+It started off as a basic structure and was elevated with modern design elements from the Pixelrocket template, giving it a more polished, professional look.
 
 ---
 
-## 🚀 Features
+## Features
 
 - **Matric Header (React):** Displays Matric No: `028 — Mid Semester Project` at the top.  
 - **Responsive Navigation:** Mobile-friendly navbar with links to all sections.  
@@ -28,7 +28,5 @@ It started as a basic structure and was elevated with modern design elements fro
 - **EmailJS** (contact form email service)  
 - **Canvas-Confetti** (celebration effect)  
 
----
 
-## 📂 Project Structure
 

@@ -1,7 +1,7 @@
 - 👋 Hi, I’m @Casscading99
-- 👀 I’m interested in data science and ml
-- 🌱 I’m currently learning python
-- 💞️ I’m looking to collaborate on python projects
+- 👀 I’m interested in data science and ML
+- 🌱 I’m currently learning Python
+- 💞️ I’m looking to collaborate on Python projects
 - 📫 How to reach me 
 - 😄 Pronouns: ...
 - ⚡ Fun fact: ...

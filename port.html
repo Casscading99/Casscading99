@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Merged Project</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;600;800&display=swap" rel="stylesheet" />
+
+    <!-- Alpine.js -->
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.3/dist/cdn.min.js" defer></script>
+
+    <!-- React for matric header -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+
+    <!-- EmailJS + Confetti -->
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+
+<body class="antialiased bg-gray-100 font-sans">
+
+    <!-- Matric Header -->
+    <div class="bg-yellow-100 text-gray-800 p-4 text-center">
+        <div id="react-root"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md" x-data="{ mobileNavOpen: false }">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-8 w-full">
+                <div class="flex-grow flex justify-center">
+                    <ul class="hidden md:flex space-x-6 font-medium text-teal-900">
+
+                        <li><a href="#about" class="hover:text-teal-600">About</a></li>
+                        <li><a href="#gallery" class="hover:text-teal-600">Gallery</a></li>
+                        <li><a href="#contact" class="hover:text-teal-600">Contact</a></li>
+                        <li><a href="#careers" class="hover:text-teal-600">Careers</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <button class="md:hidden text-teal-900" @click="mobileNavOpen = !mobileNavOpen">
+        ☰
+      </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div x-show="mobileNavOpen" class="md:hidden bg-white border-t shadow-md">
+            <ul class="flex flex-col p-4 space-y-3">
+                <li><a href="#about" class="hover:text-teal-600">About</a></li>
+                <li><a href="#gallery" class="hover:text-teal-600">Gallery</a></li>
+                <li><a href="#contact" class="hover:text-teal-600">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-blue-700 text-white py-20 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">Mid Semester Project</h1>
+        <p class="text-lg max-w-2xl mx-auto">A simple project elevated with modern design elements for a professional look.</p>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-6 lg:flex lg:items-center">
+            <div class="lg:w-1/2 mb-8 lg:mb-0">
+                <h2 class="text-3xl font-semibold mb-4">About the Project</h2>
+                <p class="text-gray-700 mb-4">
+                    This project demonstrates a simple school website using Tailwind CSS and JavaScript. It includes an about section, a gallery, and a contact form.
+                </p>
+                <p class="text-gray-700">
+                    The goal is to blend simplicity with professional design, making it functional, visually appealing, and future-ready.
+                </p>
+            </div>
+            <div class="lg:w-1/2 lg:pl-12">
+                <img src="c:\Users\user\Desktop\New folder\assets\mike-hindle-LZI_BAe5JoE-unsplash.jpg" alt="Project Showcase" class="rounded-2xl shadow-md w-full" />
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-semibold text-center mb-10">Gallery</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white rounded-2xl shadow-md overflow-hidden">
+                    <img src="c:\Users\user\Desktop\New folder\assets\pexels-eberhardgross-1366919.jpg" class="w-full h-64 object-cover" />
+                    <div class="p-4 text-center text-gray-700">Autumn Tree</div>
+                </div>
+                <div class="bg-white rounded-2xl shadow-md overflow-hidden">
+                    <img src="c:\Users\user\Desktop\New folder\assets\pexels-katja-79053-592077.jpg" class="w-full h-64 object-cover" />
+                    <div class="p-4 text-center text-gray-700">Autumn Tree Landscape</div>
+                </div>
+                <div class="bg-white rounded-2xl shadow-md overflow-hidden">
+                    <img src="c:\Users\user\Desktop\New folder\assets\pexels-pixabay-33109.jpg" class="w-full h-64 object-cover" />
+                    <div class="p-4 text-center text-gray-700">Autumn Landscape 2</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="container mx-auto px-6 max-w-2xl">
+            <h2 class="text-3xl font-semibold text-center mb-8">Contact</h2>
+            <div class="bg-gray-50 p-8 rounded-2xl shadow-md">
+                <form id="contactForm" class="space-y-4">
+                    <div>
+                        <label class="block text-gray-700">Name</label>
+                        <input type="text" id="name" class="w-full border rounded px-3 py-2" required />
+                    </div>
+                    <div>
+                        <label class="block text-gray-700">Email</label>
+                        <input type="email" id="email" class="w-full border rounded px-3 py-2" required />
+                    </div>
+                    <div>
+                        <label class="block text-gray-700">Grade</label>
+                        <textarea id="message" class="w-full border rounded px-3 py-2" required></textarea>
+                    </div>
+                    <button type="submit" class="bg-blue-700 text-white px-4 py-2 rounded hover:bg-blue-800 w-full">Send</button>
+                </form>
+                <div id="formMessage" class="mt-4 text-green-600 hidden text-center">Thank you for contacting us!</div>
+            </div>
+        </div>
+    </section>
+    <!-- Creative Careers Section: Interactive Opportunities -->
+    <section id="careers" class="py-16 bg-gradient-to-r from-teal-100 via-lime-100 to-blue-100">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-10">Shape Your Future With Me</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Card 1: Idea Pitch -->
+                <div class="bg-white rounded-2xl shadow-lg p-8 flex flex-col items-center hover:scale-105 transition-transform">
+                    <img src="https://img.icons8.com/color/96/idea.png" alt="Idea" class="mb-4" />
+                    <h4 class="text-xl font-semibold mb-2">Pitch Your Idea</h4>
+                    <p class="text-gray-600 mb-4 text-center">Have a cool concept? Share your idea and watch it come to life</p>
+                    <a href="#contact" class="bg-blue-700 text-white px-4 py-2 rounded hover:bg-blue-800">Submit Idea</a>
+                </div>
+                <!-- Card 2: Skill Swap -->
+                <div class="bg-white rounded-2xl shadow-lg p-8 flex flex-col items-center hover:scale-105 transition-transform">
+                    <img src="https://img.icons8.com/color/96/swap.png" alt="Skill Swap" class="mb-4" />
+                    <h4 class="text-xl font-semibold mb-2">Skill Swap</h4>
+                    <p class="text-gray-600 mb-4 text-center">Exchange your skills with others people. Join the monthly swap meet and learn something new.</p>
+                    <a href="#contact" class="bg-lime-500 text-teal-900 px-4 py-2 rounded hover:bg-lime-600">Join Swap</a>
+                </div>
+                <!-- Card 3: Mystery Challenge -->
+                <div class="bg-white rounded-2xl shadow-lg p-8 flex flex-col items-center hover:scale-105 transition-transform">
+                    <img src="https://img.icons8.com/color/96/treasure-map.png" alt="Challenge" class="mb-4" />
+                    <h4 class="text-xl font-semibold mb-2">Mystery Challenge</h4>
+                    <p class="text-gray-600 mb-4 text-center">Sign up for a quarterly challenge. Solve puzzles, win prizes, and unlock hidden skills</p>
+                    <a href="#contact" class="bg-yellow-400 text-teal-900 px-4 py-2 rounded hover:bg-yellow-500">Accept Challenge</a>
+                </div>
+            </div>
+            <div class="mt-12 text-center">
+                <p class="text-lg text-teal-900 font-medium">Adventures, learning, and creativity. Ready to make an impact?, <span class="font-bold"> Send an Email </span></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-16 bg-teal-900 text-white text-center">
+        <div class="container mx-auto px-6 max-w-2xl">
+            <h3 class="text-3xl font-bold mb-4">Stay Updated</h3>
+            <p class="mb-6">Subscribe to get updates on project progress and new features.</p>
+            <div class="flex flex-col sm:flex-row justify-center">
+                <input type="email" placeholder="Your email..." class="px-4 py-2 rounded-l-full sm:rounded-full border-none text-black flex-grow" />
+                <button class="mt-3 sm:mt-0 sm:ml-2 bg-lime-500 hover:bg-white hover:text-teal-900 text-teal-900 font-semibold px-6 py-2 rounded-full">Subscribe</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p class="mb-4">&copy; 2023 Mid Semester Project. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- React Matric Header Script -->
+    <script>
+        const e = React.createElement;
+
+        function HeaderInfo() {
+            return e('span', {
+                className: 'font-semibold'
+            }, 'Matric No: 028');
+        }
+
+        function HeaderDetails() {
+            return e('div', null, e(HeaderInfo), ' — ', e('span', null, 'Mid Semester Project'));
+        }
+        ReactDOM.createRoot(document.getElementById('react-root')).render(e(HeaderDetails));
+    </script>
+
+    <!-- Contact Form Script -->
+    <script>
+        (function() {
+            emailjs.init("esom"); // Replace with your EmailJS user ID
+        })();
+
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            emailjs.send("service_c5w1cqb", "template_zz2q2vo", {
+                from_name: name,
+                from_email: email,
+                message: message,
+                to_email: "esomnwonu68@gmail.com",
+            }).then(
+                function() {
+                    document.getElementById('formMessage').classList.remove('hidden');
+                    document.getElementById('contactForm').reset();
+                    if (window.confetti) confetti();
+                },
+                function() {
+                    alert("Failed to send email. Please try again later.");
+                }
+            );
+        });
+    </script>
+</body>
+
+</html>
